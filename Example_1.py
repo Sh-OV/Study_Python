@@ -1,6 +1,9 @@
 # Напишите программу, которая принимаетна ввод 2 числа и проверяет
 # является ил одно число квадратом другого?
 
+from tokenize import Double
+
+
 num_1 = int(input('Введите первое число: '))
 num_2 = int(input('Введите второе число: '))
 # print(type(num_1))
@@ -21,15 +24,15 @@ num_3 = int(input('Введите третье число: '))
 num_4 = int(input('Введите четвертое число: '))
 num_5 = int(input('Введите пятое число: '))
 
-if (num_1 >= (num_2 and num_3 and num_4 and num_5)):
+if (num_1 > (num_2 and num_3 and num_4 and num_5)):
     print(num_1, ',', num_2, ',', num_3, ',', num_4, ',', num_5, '=>', num_1)
-elif (num_2 >= (num_1 and num_3 and num_4 and num_5)):
+elif (num_2 > (num_1 and num_3 and num_4 and num_5)):
     print(num_1, ',', num_2, ',', num_3, ',', num_4, ',', num_5, '=>', num_2)
-elif (num_3 >= (num_1 and num_2 and num_4 and num_5)):
+elif (num_3 > (num_1 and num_2 and num_4 and num_5)):
     print(num_1, ',', num_2, ',', num_3, ',', num_4, ',', num_5, '=>', num_3)
-elif (num_4 >= (num_1 and num_2 and num_3 and num_5)):
+elif (num_4 > (num_1 and num_2 and num_3 and num_5)):
     print(num_1, ',', num_2, ',', num_3, ',', num_4, ',', num_5, '=>', num_4)
-elif (num_5 >= (num_1 and num_2 and num_3 and num_4)):
+elif (num_5 > (num_1 and num_2 and num_3 and num_4)):
     print(num_1, ',', num_2, ',', num_3, ',', num_4, ',', num_5, '=>', num_5)
 # -------------------------------------------------------------------------------------------------
 print("Решение в классе - Напишите программу, которая на вход принимает 5 чисел и находит максимальное из них:")
@@ -63,14 +66,23 @@ print(maxx, maxx_i)
 # -------------------------------------------------------------------------------------------------
 
 # Напишите программу, которая на вход будет принимать число N и выводить числа от -N до N
-print('Мое решение - принимать число N и выводить числа от -N до N: ')
+# print('Мое решение - принимать число N и выводить числа от -N до N: ')
 num = int(input('Введите число N: '))
-for i in range(5):
-    my_list.append(num)
-print(my_list)
-
+for i in range(-num, num + 1):
+    print( i, end = ' ')
+ 
 
 #  Напишите программу, которая будет принимать на вход дробь и показывать первую цифру дробной части числа
-
+fraction = (input('Введите дробное число: '))
+print(fraction.split('.')[1][0])            # 1 вариант решения (через строки и разделитель по знаку)
+fraction = float(input('Введите дробное число: '))
+fraction *= 10
+fraction = int(fraction)
+print(fraction % 10)
 
 #  Напишите программу, которая принимает на вход число и проверяет - кратно ли оно (5 и 10) или (15 но не 30)
+number = int(input('Введите число: '))
+if (number % 5 == 0 and number % 10 == 0) or (number % 15 == 0 and number % 30 != 0):
+    print(True)
+else:
+    print(False)
