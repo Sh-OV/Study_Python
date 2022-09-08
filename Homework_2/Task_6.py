@@ -6,7 +6,8 @@ len_num = len(number.split('.')[1])
 def Sum_digits (num, quant):
     num = float(num)
     num *= 10 ** quant
-    num = int(num)
+    num = int(abs(num))
+    
     count = 0
     sum = 0
     while (num > 0):
@@ -14,4 +15,4 @@ def Sum_digits (num, quant):
         num //= 10
     return sum
 rezult = Sum_digits(number, len_num)
-print(rezult)
+print(f'{number} -> {rezult}')
