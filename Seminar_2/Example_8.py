@@ -20,8 +20,18 @@ count = 0
 len_1 = len(line_1)
 len_2 = len(line_2)
 
-while count < len_1:
+while count < len_1 - len_2:    # т.к. если в конце 1 строки меньше букв, чем во 2 строке, то нет смысла искать
     if (line_1[count : (count + len_2)] == line_2):
         counter += 1
     count += 1
 print(counter)
+
+print('Решение № 3 (в классе): ')
+
+count1 = 0
+for i in range(0, len(line_1) - len(line_2)):
+    if line_2 == line_1[i : i + len(line_2)]:
+        count1 += 1
+
+print(f'{count1} раз')
+
