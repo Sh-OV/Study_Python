@@ -1,10 +1,20 @@
 # Задайте строку из набора чисел. Напитшите програмиму, которая покажет большее и меньшее число.
 # В качестве символа - разделителя используйте пробел
 
+# def Function_user_data ():
+#     user = input('Введите числа через прорбел: ')
+#     user_s = user.split(' ')
+#     user_list = list(map(int, user_s))
+#     return user_list
+# user_data = Function_user_data ()
+# print(user_data)
+
 def Function_user_data ():
     user = input('Введите числа через прорбел: ')
     user_s = user.split(' ')
-    user_list = list(map(int, user_s))
+    user_list = []
+    for i in range(len(user_s)):
+        user_list.append(int(user_s[i]))
     return user_list
 user_data = Function_user_data ()
 print(user_data)
