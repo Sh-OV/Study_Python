@@ -63,76 +63,67 @@ def Function_sum_polynomial (my_list_1, my_list_2):     # Функция сло�
     for i in range(len_sum):
         sum_polyn.append(0)
     print(f'len_sum = {len_sum}')    
-    
-  
+
     while (j <= (len(my_list_1)-2) and k <= (len(my_list_2)-2) and n <= (len_sum)):
-    # while (j <= len_sum and k <= len_sum and n <= len_sum):
         el1 = []
         el2 = []
-        # for i in range(5):
-        #     el1.append(0)
-        #     el2.append(0)
         el1 = my_list_1[j]
         el1 = el1.split('^')
         el2 = my_list_2[k]
         el2 = el2.split('^')
-        # print(f'el1 = {el1}')
-        # print(f'el1[0] = {el1[0]}')
-        # print(f'el1[1] = {el1[1]}')
-        # print(f'el2 = {el2}')
-        # print(f'el2[0] = {el2[0]}')
-        # print(f'el2[1] = {el2[1]}')
-        
+    
         if(len(el1) >= 2 and len(el2) >= 2):
             if int(el1[1]) > int(el2[1]):
-                # print(f'n =  {n}, j =  {j}')
+                print(f'n =  {n}, j =  {j}')
                 sum_polyn[n] = my_list_1[j]
-                # print(f'sum_polyn[n] =  {sum_polyn[n]}')
+                print(f'sum_polyn[n] =  {sum_polyn[n]}')
                 sum_polyn[n-1] = my_list_1[j-1]
-                # print(f'sum_polyn[n-1] = {sum_polyn[n-1]}')
+                print(f'sum_polyn[n-1] = {sum_polyn[n-1]}')
                 j += 2
                 n += 2
-                continue
+                
             elif int(el1[1]) == int(el2[1]):
-                # print(f'n =  {n}, j =  {j}, k = {k}')
+                print(f'n =  {n}, j =  {j}, k = {k}')
                 sum_polyn[n] = my_list_1[j]
-                # print(f'sum_polyn[n] =  {sum_polyn[n]}')
+                print(f'sum_polyn[n] =  {sum_polyn[n]}')
                 sum_polyn[n-1] = int(my_list_1[j-1]) + int(my_list_2[k-1])
-                # print(f'sum_polyn[n-1] = {sum_polyn[(n-1)]}')
+                print(f'sum_polyn[n-1] = {sum_polyn[(n-1)]}')
                 j += 2
                 k += 2
                 n += 2
-                continue
+               
             elif int(el1[1]) < int(el2[1]):
-                # print(f'n =  {n}, k =  {k}')
+                print(f'n =  {n}, k =  {k}')
                 sum_polyn[n] = my_list_2[k]
-                # print(f'sum_polyn[n] =  {sum_polyn[n]}')
+                print(f'sum_polyn[n] =  {sum_polyn[n]}')
                 sum_polyn[n-1] = my_list_2[k-1]
-                # print(f'sum_polyn[n-1] = {sum_polyn[(n-1)]}')
+                print(f'sum_polyn[n-1] = {sum_polyn[(n-1)]}')
                 k += 2
                 n += 2
-                continue  
-            
-        elif(len(el1) >= 1 and len(el2) < 2):
-            # print(f'n =  {n}, j =  {j}')
+                
+        elif(len(el1) >= 2 and len(el2) < 2):
+            print(f'n =  {n}, j =  {j}')
             sum_polyn[n] = my_list_1[j]
-            # print(f'sum_polyn[n] =  {sum_polyn[n]}')
+            print(f'sum_polyn[n] =  {sum_polyn[n]}')
             sum_polyn[n-1] = my_list_1[j-1]
-            # print(f'sum_polyn[n-1] = {sum_polyn[n-1]}')
+            print(f'sum_polyn[n-1] = {sum_polyn[n-1]}')
             j += 2
             n += 2
-            continue
-            
-        elif(len(el2) >= 1 and len(el1) < 2):
-            # print(f'n =  {n}, k =  {k}')
+           
+        elif(len(el2) >= 2 and len(el1) < 2):
+            print(f'n =  {n}, k =  {k}')
             sum_polyn[n] = my_list_2[k]
-            # print(f'sum_polyn[n] =  {sum_polyn[n]}')
+            print(f'sum_polyn[n] =  {sum_polyn[n]}')
             sum_polyn[n-1] = my_list_2[k-1]
-            # print(f'sum_polyn[n-1] = {sum_polyn[(n-1)]}')
+            print(f'sum_polyn[n-1] = {sum_polyn[(n-1)]}')
             k += 2
             n += 2
-            continue  
-        
+
+        else:
+            j += 1
+            k += 1
+            n += 1
+            
     if my_list_1[len(my_list_1) - 2] == my_list_2[len(my_list_2)-2]:
         sum_polyn[-1] = int(my_list_1[-1]) + int(my_list_2[-1])
         sum_polyn[-2] = (my_list_1[-2])
@@ -148,23 +139,6 @@ def Function_sum_polynomial (my_list_1, my_list_2):     # Функция сло�
             sum_polyn[-3] = int(my_list_2[-3])
     print(sum_polyn)
     return sum_polyn
-
-
-
-
-
-
-# def Function_sum_polynomial (my_list_1, my_list_2):
-#     if len(my_list_1) >= len(my_list_2):
-#         for i in range(len(my_list_1)):
-#             if i % 2 != 0:
-#                 for j in range(len(my_list_2)):
-#                     if my_list_1[i] == my_list_2[j]:
-#                         my_list_1[i-1] = int(my_list_1[i-1]) + int(my_list_2[j-1])
-#     if my_list_1[len(my_list_1) - 2] == my_list_2[len(my_list_2)-2]:
-#         my_list_1[len(my_list_1)-1] = int(my_list_1[len(my_list_1)-1]) + int(my_list_2[len(my_list_2)-1])
-    
-#     print(my_list_1)
 
 list_filling_1 = Function_list_filling (num1)
 list_filling_2 = Function_list_filling (num2)
