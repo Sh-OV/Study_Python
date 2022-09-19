@@ -5,8 +5,6 @@
 
 import random
 
-num = int(input('Задайте количество элементов в списке (введите натуральное число): '))
-
 def Function_creation_random_list (number):       # Функция создания списка рандомно 
     my_list = []
     for i in range(number):
@@ -21,6 +19,7 @@ def Function_sum_positions (m_list):
             sum += m_list[i]
     return sum
 
+num = int(input('Задайте количество элементов в списке (введите натуральное число): '))
 
 creation_random_list = Function_creation_random_list (num)
 sum_positions = Function_sum_positions (creation_random_list)
