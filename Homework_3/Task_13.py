@@ -13,7 +13,7 @@ def Function_creation_random_list_float (number):       # Функция соз�
         my_list.append(arg)
     return my_list
 
-def Function_difference_min_max_float (my_list):
+def Function_difference_min_max_float (my_list):        # Функция нахождения разницы между min и max
     fl_list = []
     diff = 0
     min = 100
@@ -26,7 +26,6 @@ def Function_difference_min_max_float (my_list):
         if max < help:
             max = help
     diff = (max - min) / 100
-    
     return diff
         
         
