@@ -33,7 +33,7 @@ def Function_polynomial (my_list, numb):    # Функция вывода мно
     arg = random.randint(0, 100)
     if arg != 0:
         st3 = f'{arg} = 0'
-    print( st3)
+        print( st3)
     
 list_filling = Function_list_filling (num)
 Function_polynomial (list_filling, num)
