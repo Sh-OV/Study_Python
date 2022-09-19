@@ -118,7 +118,7 @@ def Function_sum_polynomial (my_list_1, my_list_2):     # Функция сло�
             sum_polyn[-3] = int(my_list_2[-3])
     return sum_polyn
 
-def Function_readability_polynomial (my_list):
+def Function_readability_polynomial (my_list):      # Функция преобразования список элементов в формулу многочлена
     my_polyn = ""
     count = 0
     n = 2
@@ -144,7 +144,6 @@ def Function_readability_polynomial (my_list):
     
     return ' '.join (my_list)
     
-
 list_filling_1 = Function_list_filling (num1)
 list_filling_2 = Function_list_filling (num2)
 
@@ -155,6 +154,7 @@ converting_text_elements_1 = Function_converting_text_elements (polynomial_1)
 converting_text_elements_2 = Function_converting_text_elements (polynomial_2)
 
 sum_polynomial = Function_sum_polynomial (converting_text_elements_1, converting_text_elements_2)
+
 readability_polynomial = Function_readability_polynomial (sum_polynomial)
 
 print(f'Формула первого многочлена -> {polynomial_1}')
