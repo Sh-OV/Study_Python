@@ -50,3 +50,15 @@ print(out)
 list_2 = [(i, i**2) for i in list_1 if i % 2 == 0]
 print(list_2)
 
+# или
+
+file = open('1_Lectures\Lesson_3\.file.txt', 'r')
+data = file.read().split()
+file.close()
+data = list(map(int, data))
+data = list(filter(lambda e: not e % 2, data))
+data = list(map(lambda e: (e, e**2), data))
+print(data)
+
+
+
