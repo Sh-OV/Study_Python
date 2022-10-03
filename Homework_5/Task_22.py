@@ -3,14 +3,9 @@
 # Первый ход определяется жеребьёвкой. За один ход можно забрать не более чем 28 конфет. 
 # Все конфеты оппонента достаются сделавшему последний ход. 
 
-
 import random
 
-
-num = 2021
-st = 28
-
-def draw (number):
+def draw (number):      # функция жеребьевки
     lot_bot = 0
     lot_g = 0
     while lot_bot == lot_g:
@@ -25,7 +20,7 @@ def draw (number):
     elif lot_bot < lot_g:
         return 2
 
-def steps_game (count, s, dr):
+def steps_game (count, s, dr):      # функция игры
     if dr == 1:
         print("Первым ходит Bot")
         while count > 0:
@@ -38,7 +33,7 @@ def steps_game (count, s, dr):
             if count > 0:
                 step_g = s + 1
                 while step_g > s:
-                    step_g = int(input("Ход второго игрока, ход не должен превышать 28: "))
+                    step_g = int(input(f'Ваш ход, ход не должен превышать {s}: '))
                     if step_g > s:
                         print("Ваша ставка превышает разрешенную, переходите!")
                 count -= step_g
@@ -51,7 +46,7 @@ def steps_game (count, s, dr):
             if count > 0:
                 step_g = s + 1
                 while step_g > s:
-                    step_g = int(input("Ход второго игрока, ход не должен превышать 28: "))
+                    step_g = int(input(f'Ваш ход, ход не должен превышать {s}: '))
                     if step_g > s:
                         print("Ваша ставка превышает разрешенную, переходите!")
                 count -= step_g
@@ -65,6 +60,8 @@ def steps_game (count, s, dr):
             else:
                 print("Победителем стал игрок! Поздравляем!!!") 
             
+num = 2021      # лежит конфет на столе
+st = 28         # можно взять конфет за один ход
       
 draw = draw (num)
 print(draw) 

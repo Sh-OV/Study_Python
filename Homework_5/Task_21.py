@@ -7,10 +7,7 @@
 
 import random
 
-num = 2021
-st = 28
-
-def draw (number):
+def draw (number):      # функция жеребьевки
     lot_a = 0
     lot_b = 0
     while lot_a == lot_b:
@@ -25,7 +22,7 @@ def draw (number):
     elif lot_a < lot_b:
         return 2
  
-def steps_game (count, s, dr):
+def steps_game (count, s, dr):      # функция игры
     if dr == 1:
         print("Первым ходит игрок А")
     else:
@@ -34,7 +31,7 @@ def steps_game (count, s, dr):
         if count > 0:
             step_1 = s + 1
             while step_1 > s:
-                step_1 = int(input("Ход первого игрока, ход не должен превышать 28: "))
+                step_1 = int(input(f'Ваш ход, ход не должен превышать {s}: '))
                 if step_1 > s:
                     print("Ваша ставка превышает разрешенную, переходите!")
             count -= step_1
@@ -44,13 +41,16 @@ def steps_game (count, s, dr):
         if count > 0:
             step_2 = s + 1
             while step_2 > s:
-                step_2 = int(input("Ход второго игрока, ход не должен превышать 28: "))
+                step_2 = int(input(f'Ваш ход, ход не должен превышать {s}: '))
                 if step_2 > s:
                     print("Ваша ставка превышает разрешенную, переходите!")
             count -= step_2
             print(f'Осталось {count} конфет')
         else:
             print("Победителем стал первый игрок!")
+
+num = 2021      # лежит конфет на столе
+st = 28         # можно взять конфет за один ход
 
 draw = draw (num)
 print(draw) 
