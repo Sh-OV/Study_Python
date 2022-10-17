@@ -1,7 +1,6 @@
 from cProfile import label
 from tkinter import *
 import registration as reg
-# import logger as lg
 
 path_csv = 'Homework_8\Telephone_directory_csv'
 
@@ -20,7 +19,7 @@ def add_subscriber():
     txt_8.delete(0, END)
     txt_9.delete(0, END)
     txt_10.delete(0, END)
-    return
+    return x
 
 def save():
     f = open(path_csv, 'r+', encoding='utf-8')

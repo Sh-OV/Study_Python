@@ -1,5 +1,16 @@
 from cProfile import label
 from tkinter import *
+import logger as lg
+
+# --------------------------------------------------------------------
+logger = lg.get_logger(__name__)
+
+def process(msg):
+    logger.info("Перед процессом")
+    print(msg)
+    logger.info("После процесса")
+# ---------------------------------------------------------------------
+
 
 def f_csv():
     window_one.destroy()
