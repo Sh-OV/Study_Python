@@ -1,0 +1,35 @@
+name:       my_first_python_Bot
+username:   first_ShOV_bot
+
+BotFather, [17.10.2022 17:58]
+Done! Congratulations on your new bot. You will find it at t.me/first_Show_bot. 
+You can now add a description, about section and profile picture for your boat, 
+see /help for a list of commands. By the way, when you've finished creating your coolbot, 
+ping our Bot Support if you want a better username for it. 
+Just make sure the bot is fully operational before you do this.
+
+Use this token to access the HTTP API:
+5539755775:AAE946jOvDqU1kmWTzQSFQRtBhjpF-l2ugQ
+Keep your token secure and store it safely, it can be used by anyone to control your bot.
+
+For a description of the Bot API, see this page: https://core.telegram.org/bots/api
+
+------------------------------------------------------------------------------------------------------------------------------
+    ПЕРЕВОД:
+------------------------------------------------------------------------------------------------------------------------------
+имя:       my_first_python_Bot
+имя пользователя:   first_ShOV_bot
+
+Ботфатер, [17.10.2022 17:58]
+Сделано! Поздравляю с вашим новым ботом. Вы найдете его по адресу t.me/first_Show_bot . 
+Теперь вы можете добавить описание, раздел "О компании" и фотографию профиля для вашей лодки, 
+список команд см. в разделе /help. Кстати, когда вы закончите создавать своего coolbot, 
+свяжитесь с нашей службой поддержки ботов, если вам нужно лучшее имя пользователя для него. 
+Просто убедитесь, что бот полностью работоспособен, прежде чем делать это.
+
+Используйте этот токен для доступа к HTTP API:
+5539755775:AAE946jOvDqU1kmWTzQSFQRtBhjpF-l2ugQ
+Сохраняйте свой токен в безопасности и храните его в надежном месте, 
+его может использовать любой желающий для управления вашим ботом.
+
+Описание API бота смотрите на этой странице: https://core.telegram.org/bots/api
