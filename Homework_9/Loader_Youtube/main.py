@@ -8,6 +8,6 @@ print('Длина трека: ', vid.length, 'секунд')
 print('Описание: ', vid.description)
 print('Рейтинги: ', vid.rating)
 vid_download = vid.streams.get_by_itag('17')
-vid_download.download("C:\SAVE_PATH")
+vid_download.download("D:\SAVE_PATH")
 print('Скачивание завешено!')
 

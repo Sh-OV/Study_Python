@@ -36,7 +36,8 @@ def Function_Fibo_list (number):
         f_neg[((len(f_neg)-1)-(1*i))] = help
         i += 1
     
-    fibo_liost = f_neg + f_pos
+    for i in range(1, len(f_pos), 2):
+        fibo_liost = f_neg + f_pos
     return fibo_liost
     
 fibo_list = Function_Fibo_list (num)

@@ -1,6 +1,9 @@
 # Задайте натуральное число N. Напишите программу, которая составит список простых множителей числа N.
 # "20" -> [2, 2, 5]
 
+from curses.ascii import isdigit
+
+
 num = int(input('Введите натуральное число: '))
 
 def Function_multiplier (number):
@@ -10,7 +13,6 @@ def Function_multiplier (number):
         if (number % prime_multipliers[i] == 0):
             mult = prime_multipliers[i]
             return mult
-    
 
 def Function_list_multiplier (number):
     my_list = []
