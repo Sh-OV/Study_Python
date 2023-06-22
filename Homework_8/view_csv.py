@@ -1,13 +1,22 @@
 from cProfile import label
 from tkinter import *
+import tkinter as tk
+from tkinter import Listbox
+from tkinter import Entry
 import registration as reg
+import datetime
 
 path_csv = 'Homework_8\Telephone_directory_csv'
 
-def add_subscriber():
-    list_phon.insert(END, txt_1.get() + ',' + txt_2.get() + ',' + txt_3.get() + ',' + txt_4.get() + ',' \
+def add_subscriber(index = END):
+    list_phon.insert(index, txt_1.get() + ',' + txt_2.get() + ',' + txt_3.get() + ',' + txt_4.get() + ',' \
                     + txt_5.get() + ',' + txt_6.get() + ',' + txt_7.get() + ',' + txt_8.get() + ',' \
                     + txt_9.get() + ',' + txt_10.get() + ',' + '\n')
+    save()
+    del_window_text()
+    return
+
+def del_window_text():
     x = txt_1.get()
     txt_1.delete(0, END)
     txt_2.delete(0, END)
@@ -19,33 +28,56 @@ def add_subscriber():
     txt_8.delete(0, END)
     txt_9.delete(0, END)
     txt_10.delete(0, END)
-    return x
+    return
+    
 
-def save():
-    f = open(path_csv, 'r+', encoding='utf-8')
+def save(arg = 'r+'):
+    f = open(path_csv, arg, encoding='utf-8')
     f.writelines("".join(list_phon.get(0, END)))
     f.close()
     return
 
-def delete_subscriber():
+def delete_subscriber(select = END):
     select = list(list_phon.curselection())
     select.reverse()
     for i in select:
-        x = i
         list_phon.delete(i)
-    return f'Удален контакт "{x}"'
+    save('w')
+    return
+
+def save_changes():
+    select = list(list_phon.curselection())
+    add_subscriber(select)
+    delete_subscriber(select)
+    
+
+def changes_data_note():
+    select = list(list_phon.curselection())
+    chang_str = list_phon.get(select).split(',')
+    print(chang_str)
+    txt_1.insert(0, chang_str[0])
+    txt_2.insert(1, chang_str[1])
+    txt_3.insert(2, chang_str[2])
+    txt_4.insert(3, chang_str[3])
+    txt_5.insert(4, chang_str[4])
+    txt_6.insert(5, chang_str[5])
+    txt_7.insert(6, chang_str[6])
+    txt_8.insert(7, chang_str[7])
+    txt_9.insert(8, chang_str[8])
+    txt_10.insert(9, chang_str[9])
+    return 
+
 
 window = Tk()
 window.title("Телефонный справочник, csv")
-window.geometry('1300x600')
+window.geometry('1500x600')
 
 args1 = {'bg' : "pale green", 'fg' : "blue", 'font' : ("Arial Bold", 12), 'activebackground' : "green"}
 args2 = {'fg' : "navy", 'font' : ("Arial Bold", 12)}
 lc = reg.list_contact_parameters()
 
-lb_l = Label(window, text = lc[0], **args2)                                     
-lb_l.place(x = 10, y = 10)
-txt_1 = Entry(window, width = 25, font = ("Arial Bold", 12))  
+lb_l = Label(window, text = lc[0], **args2).place(x = 10, y = 10)
+txt_1 = Entry(window, width = 25, font = ("Arial Bold", 12))                                           
 txt_1.place(x = 250, y = 10)
 lb_2 = Label(window, text = lc[1], **args2)                                     
 lb_2.place(x = 10, y = 50)
@@ -85,11 +117,14 @@ txt_10 = Entry(window, width = 25, font = ("Arial Bold", 12))
 txt_10.place(x = 250, y = 370)
 
 btn = Button(window, width = 25, text = "Добавить абонента", **args1, command = add_subscriber)
-btn.place(x = 500, y = 450)
+btn.place(x = 600, y = 450)
 btn = Button(window, width = 25, text = "Удалить абонента", **args1, command = delete_subscriber)
-btn.place(x = 1000, y = 450)
-btn = Button(window, width = 25, text = "Сохранить", **args1, command = save)
-btn.place(x = 750, y = 450)
+btn.place(x = 900, y = 450)
+btn = Button(window, width = 25, text = "Изменить", **args1, command = changes_data_note)
+btn.place(x = 600, y = 500)
+btn = Button(window, width = 25, text = "Сохранить изменение", **args1, command = save_changes)
+btn.place(x = 900, y = 500)
+
 
 list_phon = Listbox(width = 120, height = 25, selectmode = EXTENDED) 
 list_phon.place(x = 500, y = 10)

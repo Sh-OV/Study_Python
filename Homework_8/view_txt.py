@@ -1,7 +1,7 @@
-from cProfile import label
+
 from tkinter import *
 import registration as reg
-# import logger as lg
+
 
 
 path_txt = 'Homework_8\Telephone_directory.txt'
